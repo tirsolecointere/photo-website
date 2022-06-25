@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\File;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
+use Illuminate\Support\Str;
 
 class FileController extends Controller
 {
@@ -19,7 +22,9 @@ class FileController extends Controller
      */
     public function index()
     {
-        return view('admin.files.index');
+
+        $files = File::all();
+        return view('admin.files.index', compact('files'));
     }
 
     /**
@@ -40,7 +45,25 @@ class FileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'file' => 'required|image|max:5120'
+        ]);
+
+        $image = Image::make($request->file('file'));
+        $image_name = Str::random(10).'_'.$request->file('file')->getClientOriginalName();
+        $image_path = storage_path().'\app\public\photos/'.$image_name;
+
+
+        $image->resize(800, 800, function($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            })->save($image_path);
+
+        File::create([
+            'url' => '/storage/photos/'.$image_name
+        ]);
+
+        return redirect()->route('admin.files.index');
     }
 
     /**

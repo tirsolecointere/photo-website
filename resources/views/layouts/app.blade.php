@@ -11,10 +11,10 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        {{-- <link rel="stylesheet" href="{{ asset('css/app.css') }}"> --}}
+        <script src="https://cdn.tailwindcss.com"></script>
 
-        <!-- Scripts -->
-        <script src="{{ asset('js/app.js') }}" defer></script>
+        <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
@@ -40,5 +40,12 @@
                 {{ $slot }}
             </main>
         </div>
+
+        {{-- Plugins --}}
+        <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+
+        <!-- Scripts -->
+        <script src="{{ asset('js/app.js') }}"></script>
+        <script src="{{ asset('js/custom.js') }}"></script>
     </body>
 </html>

@@ -5,6 +5,12 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <h1 class="text-xl">Vista <b>index</b> de <b>files</b></h1>
                 </div>
+
+                <div class="p-6">
+                    @foreach ($files as $image)
+                        <img src="{{ $image->url }}" alt="" class="inline-block h-auto max-w-xs mr-4 mb-4">
+                    @endforeach
+                </div>
             </div>
         </div>
     </div>
