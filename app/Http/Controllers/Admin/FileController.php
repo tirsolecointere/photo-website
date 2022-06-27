@@ -60,6 +60,7 @@ class FileController extends Controller
             })->save($image_path);
 
         File::create([
+            'user_id' => auth()->user()->id,
             'url' => '/storage/photos/'.$image_name
         ]);
 
@@ -108,6 +109,11 @@ class FileController extends Controller
      */
     public function destroy(File $file)
     {
-        //
+        $url = str_replace('storage', 'public', $file->url);
+
+        Storage::delete($url);
+
+        $file->delete();
+        return redirect()->route('admin.files.index');
     }
 }
