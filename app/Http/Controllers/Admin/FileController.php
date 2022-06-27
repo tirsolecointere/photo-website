@@ -80,12 +80,21 @@ class FileController extends Controller
 
             $image = Image::make($request->file('file'));
 
-            $image->resize($value['width'], $value['height'], function($constraint) {
+            if ($size == 'th') {
+                $image->fit($value['width'], $value['height'], function($constraint) {
+                        $constraint->aspectRatio();
+                        $constraint->upsize();
+                    })->save(
+                        storage_path().'\app\public\photos/'.$size.'/'.$image_name
+                    );
+            } else {
+                $image->resize($value['width'], $value['height'], function($constraint) {
                     $constraint->aspectRatio();
                     $constraint->upsize();
                 })->save(
                     storage_path().'\app\public\photos/'.$size.'/'.$image_name
                 );
+            }
         }
 
         $file = File::create([
@@ -141,9 +150,14 @@ class FileController extends Controller
      */
     public function destroy(File $file)
     {
-        $url = str_replace('storage', 'public', $file->url);
-
-        Storage::delete($url);
+        $image_sizes = [
+            'th' => str_replace('storage', 'public', $file->url_th),
+            'md' => str_replace('storage', 'public', $file->url_md),
+            'lg' => str_replace('storage', 'public', $file->url_lg)
+        ];
+        foreach ($image_sizes as $key => $value) {
+            Storage::delete($value);
+        };
 
         $file->delete();
         return redirect()->route('admin.files.index');
