@@ -97,13 +97,12 @@ class FileController extends Controller
             }
         }
 
-        $file = File::create([
+        File::create([
             'user_id' => auth()->user()->id,
+            'url_th' => '/storage/photos/th/'.$image_name,
+            'url_md' => '/storage/photos/md/'.$image_name,
+            'url_lg' => '/storage/photos/lg/'.$image_name,
         ]);
-        $file->url_th = '/storage/photos/th/'.$image_name;
-        $file->url_md = '/storage/photos/md/'.$image_name;
-        $file->url_lg = '/storage/photos/lg/'.$image_name;
-        $file->save();
 
         return redirect()->route('admin.files.index');
     }
