@@ -49,20 +49,52 @@ class FileController extends Controller
             'file' => 'required|image|max:5120'
         ]);
 
-        $image = Image::make($request->file('file'));
-        $image_name = Str::random(10).'_'.$request->file('file')->getClientOriginalName();
-        $image_path = storage_path().'\app\public\photos/'.$image_name;
+        $image_sizes = [
+            'th' => [
+                'width'     => 165,
+                'height'    => 165,
+            ],
+            'md' => [
+                'width'     => 820,
+                'height'    => 820,
+            ],
+            'lg' => [
+                'width'     => 1280,
+                'height'    => 1280,
+            ],
+        ];
 
+        $time = time();
+        $str_random = Str::random(10);
 
-        $image->resize(800, 800, function($constraint) {
-                $constraint->aspectRatio();
-                $constraint->upsize();
-            })->save($image_path);
+        $image_name = $time.'_'.$str_random.'.'.$request->file('file')->getClientOriginalExtension();
 
-        File::create([
+        if (!Storage::exists('public/photos')) {
+            Storage::makeDirectory('public/photos');
+        }
+
+        foreach ($image_sizes as $size => $value) {
+            if (!Storage::exists('public/photos/'.$size)) {
+                Storage::makeDirectory('public/photos/'.$size);
+            }
+
+            $image = Image::make($request->file('file'));
+
+            $image->resize($value['width'], $value['height'], function($constraint) {
+                    $constraint->aspectRatio();
+                    $constraint->upsize();
+                })->save(
+                    storage_path().'\app\public\photos/'.$size.'/'.$image_name
+                );
+        }
+
+        $file = File::create([
             'user_id' => auth()->user()->id,
-            'url' => '/storage/photos/'.$image_name
         ]);
+        $file->url_th = '/storage/photos/th/'.$image_name;
+        $file->url_md = '/storage/photos/md/'.$image_name;
+        $file->url_lg = '/storage/photos/lg/'.$image_name;
+        $file->save();
 
         return redirect()->route('admin.files.index');
     }
