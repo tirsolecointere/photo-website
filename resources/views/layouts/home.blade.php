@@ -24,7 +24,7 @@
         <nav class="flex items-center justify-center bg-stone-100/90 backdrop-blur-md backdrop-saturate-200 py-2 lg:py-4 mx-4 lg:mx-8 mt-4 lg:mt-8 h-16 lg:h-24 fixed top-0 right-0 left-0 w-100 z-50">
             <div class="flex-grow mx-auto px-4 lg:px-8 flex md:justify-between items-center gap-4">
                 <div>
-                    <button id="menu-toggler" type="button" class="flex w-10 h-10 justify-center items-center bg-stone-900 hover:bg-stone-700 rounded-full text-white outline-none focus:ring-1 ring-offset-2 ring-stone-400 rotate-0 transition-all duration-[750ms]">
+                    <button id="menu-toggler" type="button" class="flex w-10 h-10 justify-center items-center bg-stone-900 hover:bg-stone-700 rounded-full text-white outline-none focus:ring-1 ring-offset-2 ring-stone-400 rotate-0 transition-transform duration-[750ms]" title="toggle menu">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M3 7a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 13a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
                         </svg>
@@ -42,7 +42,7 @@
         <!-- Offcanvas Menu -->
         <div id="offcanvas-menu" class="fixed inset-0 flex items-center justify-center bg-stone-100 p-8 z-40 opacity-0 invisible transition-all duration-[750ms]">
             <div class="offcanvas-menu__content text-center">
-                <p class="block text-lg md:text-2xl">i’m a <b>landscape photographer</b> based in <b>Valencia, Venezuela</b>.</p>
+                <p class="block text-lg md:text-2xl">i’m a <b>landscape photographer</b> based in <b>valencia, venezuela</b>.</p>
                 <ul class="inline-flex flex-wrap gap-6 mt-8">
                     <li class="block">
                         <a href="" class="block text-stone-900 hover:text-stone-500 lowercase whitespace-nowrap hover:underline">

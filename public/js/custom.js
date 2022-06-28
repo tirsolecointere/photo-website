@@ -2,15 +2,17 @@
 let state = { closed: true }
 
 const toggler = document.getElementById('menu-toggler'),
-    menu = document.getElementById('offcanvas-menu');
+        menu = document.getElementById('offcanvas-menu');
 
 let render = () => {
     if (state.closed) {
         menu.classList.remove('active');
         toggler.classList.remove('active')
+        document.querySelector('body').classList.remove('offcanvas-open')
     } else {
         menu.classList.add('active');
         toggler.classList.add('active')
+        document.querySelector('body').classList.add('offcanvas-open')
     }
 }
 

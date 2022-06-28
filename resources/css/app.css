@@ -16,3 +16,21 @@
 #offcanvas-menu.active .offcanvas-menu__content {
     @apply opacity-100 scale-100
 }
+
+body.offcanvas-open {
+    @apply overflow-y-hidden pr-2;
+}
+
+.masonry-grid__item:nth-child(2), .masonry-grid__item:nth-child(4) {
+    margin-top: 3rem;
+}
+
+::-webkit-scrollbar {
+    @apply w-2;
+}
+::-webkit-scrollbar-track {
+    @apply bg-black;
+}
+::-webkit-scrollbar-thumb {
+    @apply bg-white/20;
+}
