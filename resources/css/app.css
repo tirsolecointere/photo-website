@@ -2,25 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-    @variants responsive {
-        .masonry {
-            column-gap: 1.5em;
-            column-count: 2;
-            row-gap: 1.5em;
-        }
-        .masonry-sm {
-            column-gap: 1.5em;
-            column-count: 3;
-            row-gap: 1.5em;
-        }
-        .masonry-md {
-            column-gap: 1.5em;
-            column-count: 4;
-            row-gap: 1.5em;
-        }
-        .break-inside {
-            break-inside: avoid;
-        }
-    }
+#menu-toggler.active {
+    @apply rotate-90;
+}
+
+#offcanvas-menu.active {
+    @apply opacity-100 visible;
+}
+
+.offcanvas-menu__content {
+    @apply opacity-0 scale-150 transition-all duration-[750ms]
+}
+#offcanvas-menu.active .offcanvas-menu__content {
+    @apply opacity-100 scale-100
 }
