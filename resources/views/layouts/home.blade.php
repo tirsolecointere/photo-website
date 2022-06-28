@@ -41,7 +41,14 @@
 
         <!-- Offcanvas Menu -->
         <div id="offcanvas-menu" class="fixed inset-0 flex items-center justify-center bg-stone-100 p-8 z-40 opacity-0 invisible transition-all duration-[750ms]">
-            <div class="offcanvas-menu__content text-center">
+
+            <div class="absolute inset-x-0 bottom-0 w-full h-[65vh] lg:h-[85vh] overflow-hidden select-none pointer-events-none">
+                <img src="{{ asset('assets/images/menu_bg.jpg') }}" class="offcanvas-menu__bg w-full h-full object-cover object-bottom transition-transform ease-out scale-110 duration-[3s]" alt="menu background photo">
+            </div>
+            <div class="absolute inset-x-0 bottom-[18%] top-[35vh] lg:top-[15vh] bg-gradient-to-b from-stone-100 to-transparent pointer-events-none"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-transparent to-stone-100 pointer-events-none"></div>
+
+            <div class="offcanvas-menu__content text-center transition-all duration-[1s]">
                 <p class="block text-lg md:text-2xl">i’m a <b>landscape photographer</b> based in <b>valencia, venezuela</b>.</p>
                 <ul class="inline-flex flex-wrap gap-6 mt-8">
                     <li class="block">

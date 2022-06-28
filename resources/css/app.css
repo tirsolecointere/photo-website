@@ -11,10 +11,13 @@
 }
 
 .offcanvas-menu__content {
-    @apply opacity-0 scale-150 transition-all duration-[750ms]
+    @apply opacity-0 scale-150
 }
 #offcanvas-menu.active .offcanvas-menu__content {
     @apply opacity-100 scale-100
+}
+#offcanvas-menu.active .offcanvas-menu__bg {
+    @apply scale-100
 }
 
 body.offcanvas-open {
