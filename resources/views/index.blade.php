@@ -2,11 +2,11 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
             <nav class="flex justify-center items-center flex-wrap mb-8">
-                <a href="javascript:void(0)" class="block lowercase py-2 px-4 hover:underline font-semibold text-black">All</a>
-                <a href="javascript:void(0)" class="block lowercase py-2 px-4 hover:underline hover:text-slate-800 text-slate-500">Cityscape</a>
-                <a href="javascript:void(0)" class="block lowercase py-2 px-4 hover:underline hover:text-slate-800 text-slate-500">Mountain</a>
-                <a href="javascript:void(0)" class="block lowercase py-2 px-4 hover:underline hover:text-slate-800 text-slate-500">Minimalist</a>
-                <a href="javascript:void(0)" class="block lowercase py-2 px-4 hover:underline hover:text-slate-800 text-slate-500">Other</a>
+                <a href="javascript:void(0)" class="block lowercase py-2 px-4 hover:underline font-semibold text-stone-900">All</a>
+                <a href="javascript:void(0)" class="block lowercase py-2 px-4 hover:underline hover:text-stone-700 text-stone-500">Cityscape</a>
+                <a href="javascript:void(0)" class="block lowercase py-2 px-4 hover:underline hover:text-stone-700 text-stone-500">Mountain</a>
+                <a href="javascript:void(0)" class="block lowercase py-2 px-4 hover:underline hover:text-stone-700 text-stone-500">Minimalist</a>
+                <a href="javascript:void(0)" class="block lowercase py-2 px-4 hover:underline hover:text-stone-700 text-stone-500">Other</a>
             </nav>
 
             <div class="masonry-grid">
