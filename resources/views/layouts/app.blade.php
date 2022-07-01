@@ -14,7 +14,7 @@
         {{-- <link rel="stylesheet" href="{{ asset('css/app.css') }}"> --}}
         <script src="https://cdn.tailwindcss.com"></script>
 
-        {{-- <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" /> --}}
+        @livewireStyles
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
@@ -41,11 +41,9 @@
             </main>
         </div>
 
-        {{-- Plugins --}}
-        {{-- <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script> --}}
-
         <!-- Scripts -->
+        @livewireScripts
+
         <script src="{{ asset('js/app.js') }}"></script>
-        <script src="{{ asset('js/custom.js') }}"></script>
     </body>
 </html>
