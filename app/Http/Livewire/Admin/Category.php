@@ -56,4 +56,8 @@ class Category extends Component
     public function cancel() {
         $this->category = new ModelsCategory();
     }
+
+    public function hydrate() {
+        $this->resetErrorBag();
+    }
 }

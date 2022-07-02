@@ -46,7 +46,7 @@
                         </svg>
                     </button>
                     <div>
-                        <input type="text" wire:model="category.name" class="rounded-md shadow-sm border border-gray-200 focus:border-indigo-400 focus:outline-none focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-1">
+                        <input type="text" wire:model.defer="category.name" class="rounded-md shadow-sm border border-gray-200 focus:border-indigo-400 focus:outline-none focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-1">
                         @error('category.name')
                             <div>
                                 <small class="font-medium text-red-600">{{ $message }}</small>

@@ -35,8 +35,6 @@
                             </div>
                         </div>
 
-
-
                         <div class="py-4">
                             <x-button>Upload image</x-button>
                         </div>
