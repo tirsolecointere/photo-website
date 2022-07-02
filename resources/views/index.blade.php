@@ -11,7 +11,7 @@
             <div class="masonry-grid">
                 @forelse ($images as $image)
                 <div class="masonry-grid__item float-left p-1 md:p-3 w-1/2 md:w-1/3 lg:w-1/4">
-                    <img src="{{ $image->url_md }}" alt="" class="w-full h-auto">
+                    <img src="{{ Storage::url($image->url_md) }}" alt="" class="w-full h-auto">
                 </div>
                 @empty
                     <p class="text-center">No images available.</p>

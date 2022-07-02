@@ -15,7 +15,7 @@
                 <div class="divide-y divide-slate-400/20 text-sm leading-5 text-slate-900">
                 @foreach ($files as $image)
                     <div class="flex items-center justify-between p-4">
-                        <img src="{{ $image->url_th }}" alt="" class="h-20 w-20 object-cover flex-none rounded-lg">
+                        <img src="{{ Storage::url($image->url_th) }}" alt="" class="h-20 w-20 object-cover flex-none rounded-lg">
                         <div class="ml-4 flex-auto">
                             <div class="font-medium">{{ $image->created_at }}</div>
                             <div class="mt-1 text-slate-400 uppercase font-medium text-xs">Showing : <span class="text-green-400">true</span></div>

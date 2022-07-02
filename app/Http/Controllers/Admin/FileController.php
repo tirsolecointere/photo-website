@@ -74,13 +74,13 @@ class FileController extends Controller
 
         $image_name = $time.'_'.$str_random.'.'.$request->file('file')->getClientOriginalExtension();
 
-        if (!Storage::exists('public/photos')) {
-            Storage::makeDirectory('public/photos');
+        if (!Storage::exists('photos')) {
+            Storage::makeDirectory('photos');
         }
 
         foreach ($image_sizes as $size => $value) {
-            if (!Storage::exists('public/photos/'.$size)) {
-                Storage::makeDirectory('public/photos/'.$size);
+            if (!Storage::exists('photos/'.$size)) {
+                Storage::makeDirectory('photos/'.$size);
             }
 
             $image = Image::make($request->file('file'));
@@ -104,9 +104,9 @@ class FileController extends Controller
 
         $file = File::create([
             'user_id' => auth()->user()->id,
-            'url_th' => '/storage/photos/th/'.$image_name,
-            'url_md' => '/storage/photos/md/'.$image_name,
-            'url_lg' => '/storage/photos/lg/'.$image_name,
+            'url_th' => '/photos/th/'.$image_name,
+            'url_md' => '/photos/md/'.$image_name,
+            'url_lg' => '/photos/lg/'.$image_name,
         ]);
 
         $file->categories()->sync($request->categories);
@@ -133,7 +133,9 @@ class FileController extends Controller
      */
     public function edit(File $file)
     {
-        return view('admin.files.edit');
+        $categories = Category::all();
+
+        return view('admin.files.edit', compact('file', 'categories'));
     }
 
     /**
@@ -145,7 +147,77 @@ class FileController extends Controller
      */
     public function update(Request $request, File $file)
     {
-        //
+        $request->validate([
+            'file' => 'image|max:5120',
+            'categories' => 'required|min:2'
+        ]);
+
+        $image_sizes = [
+            'th' => [
+                'width'     => 165,
+                'height'    => 165,
+            ],
+            'md' => [
+                'width'     => 820,
+                'height'    => 820,
+            ],
+            'lg' => [
+                'width'     => 1280,
+                'height'    => 1280,
+            ],
+        ];
+
+        if ($request->file('file')) {
+            Storage::delete($file->url_th);
+            Storage::delete($file->url_md);
+            Storage::delete($file->url_lg);
+
+            $time = time();
+            $str_random = Str::random(10);
+
+            $image_name = $time.'_'.$str_random.'.'.$request->file('file')->getClientOriginalExtension();
+
+            if (!Storage::exists('photos')) {
+                Storage::makeDirectory('photos');
+            }
+
+            foreach ($image_sizes as $size => $value) {
+                if (!Storage::exists('photos/'.$size)) {
+                    Storage::makeDirectory('photos/'.$size);
+                }
+
+                $image = Image::make($request->file('file'));
+
+                if ($size == 'th') {
+                    $image->fit($value['width'], $value['height'], function($constraint) {
+                            $constraint->aspectRatio();
+                            $constraint->upsize();
+                        })->save(
+                            storage_path().'\app\public\photos/'.$size.'/'.$image_name
+                        );
+                } else {
+                    $image->resize($value['width'], $value['height'], function($constraint) {
+                        $constraint->aspectRatio();
+                        $constraint->upsize();
+                    })->save(
+                        storage_path().'\app\public\photos/'.$size.'/'.$image_name
+                    );
+                }
+            }
+
+            $file->update([
+                'url_th' => '/photos/th/'.$image_name,
+                'url_md' => '/photos/md/'.$image_name,
+                'url_lg' => '/photos/lg/'.$image_name,
+            ]);
+
+            $file->categories()->sync($request->categories);
+
+        } else {
+            $file->categories()->sync($request->categories);
+        }
+
+        return redirect()->route('admin.files.index');
     }
 
     /**
