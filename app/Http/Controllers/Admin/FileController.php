@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\File;
 use Illuminate\Support\Facades\Storage;
@@ -34,7 +35,9 @@ class FileController extends Controller
      */
     public function create()
     {
-        return view('admin.files.create');
+        $categories = Category::all();
+
+        return view('admin.files.create', compact('categories'));
     }
 
     /**
@@ -46,8 +49,10 @@ class FileController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'file' => 'required|image|max:5120'
+            'file' => 'required|image|max:5120',
+            'categories' => 'required|min:2'
         ]);
+
 
         $image_sizes = [
             'th' => [
@@ -97,12 +102,14 @@ class FileController extends Controller
             }
         }
 
-        File::create([
+        $file = File::create([
             'user_id' => auth()->user()->id,
             'url_th' => '/storage/photos/th/'.$image_name,
             'url_md' => '/storage/photos/md/'.$image_name,
             'url_lg' => '/storage/photos/lg/'.$image_name,
         ]);
+
+        $file->categories()->sync($request->categories);
 
         return redirect()->route('admin.files.index');
     }

@@ -20,6 +20,14 @@
                             <div class="font-medium">{{ $image->created_at }}</div>
                             <div class="mt-1 text-slate-400 uppercase font-medium text-xs">Showing : <span class="text-green-400">true</span></div>
                             <div class="mt-1 text-slate-400">by : {{ $image->user->name }}</div>
+                            @if (count($image->categories) > 0)
+                                <div class="mt-1 text-slate-400 font-medium">Categories :
+                                    @foreach ($image->categories as $category)
+                                        <span class="font-bold">{{ $category->name }}</span>
+                                        @if (!$loop->last) , @endif
+                                    @endforeach
+                                </div>
+                            @endif
                         </div>
                         <div class="flex items-center gap-2">
                             <a href="{{ route('admin.files.edit', $image) }}" class="flex-none rounded-md py-2 px-2 font-medium text-slate-700 shadow-sm border border-slate-700/10 hover:bg-slate-50">
