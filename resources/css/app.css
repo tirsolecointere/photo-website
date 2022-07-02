@@ -24,8 +24,18 @@ body.offcanvas-open {
     @apply overflow-y-hidden pr-2;
 }
 
-.masonry-grid__item:nth-child(2), .masonry-grid__item:nth-child(4) {
+.masonry-grid__item:nth-child(2) {
     margin-top: 3rem;
+}
+@media (min-width: 1024px) {
+    .masonry-grid__item:nth-child(2), .masonry-grid__item:nth-child(4) {
+        margin-top: 3rem;
+    }
+}
+@media (min-width: 768px) {
+    .masonry-grid__item:nth-child(2) {
+        margin-top: 3rem;
+    }
 }
 
 ::-webkit-scrollbar {
