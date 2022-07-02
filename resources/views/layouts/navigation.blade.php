@@ -11,9 +11,10 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="hidden space-x-3 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('admin.home')" :active="request()->routeIs('admin.home')">Home</x-nav-link>
                     <x-nav-link :href="route('admin.files.index')" :active="request()->routeIs('admin.files.*')">Gallery</x-nav-link>
+                    <x-nav-link :href="route('admin.categories')" :active="request()->routeIs('admin.categories.*')">Categories</x-nav-link>
                 </div>
             </div>
 

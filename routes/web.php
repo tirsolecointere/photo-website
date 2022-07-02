@@ -3,7 +3,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 use App\Http\Controllers\Admin\FileController;
-use App\Models\Category;
+use App\Http\Controllers\Admin\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 use App\Models\File;
@@ -26,6 +26,8 @@ Route::prefix('admin')->group(function() {
 
         Route::get('/', [AdminHomeController::class, 'index'])->name('home');
         Route::resource('/files', FileController::class)->names('files');
+
+        Route::get('/categories', [CategoryController::class, 'index'])->name('categories');
 
     });
 });
