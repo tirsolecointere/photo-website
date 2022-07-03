@@ -50,7 +50,7 @@ class FileController extends Controller
     {
         $request->validate([
             'file' => 'required|image|max:5120',
-            'categories' => 'required|min:2'
+            // 'categories' => 'required|min:1'
         ]);
 
 
@@ -149,7 +149,7 @@ class FileController extends Controller
     {
         $request->validate([
             'file' => 'image|max:5120',
-            'categories' => 'required|min:2'
+            // 'categories' => 'required|min:2'
         ]);
 
         $image_sizes = [

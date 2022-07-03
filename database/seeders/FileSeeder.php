@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
 use App\Models\File;
 use Illuminate\Database\Seeder;
 
@@ -14,6 +15,10 @@ class FileSeeder extends Seeder
      */
     public function run()
     {
-        File::factory(15)->create();
+        $file = File::factory(15)->create();
+
+        foreach ($file as $file) {
+            $file->categories()->sync([rand(1,2), rand(3,5)]);
+        }
     }
 }

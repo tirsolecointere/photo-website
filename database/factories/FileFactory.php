@@ -17,7 +17,6 @@ class FileFactory extends Factory
     public function definition()
     {
         $user = User::first()->id;
-        $category = Category::all()->random()->id;
 
         $image_sizes = [
             'th' => [
@@ -35,8 +34,8 @@ class FileFactory extends Factory
         ];
 
         foreach ($image_sizes as $size => $value) {
-            if (!Storage::exists('public/photos/'.$size)) {
-                Storage::makeDirectory('public/photos/'.$size);
+            if (!Storage::exists('photos/'.$size)) {
+                Storage::makeDirectory('photos/'.$size);
             }
         }
 
@@ -45,7 +44,6 @@ class FileFactory extends Factory
             'url_md' => $this->faker->imageUrl(820, 820),
             'url_lg' => $this->faker->imageUrl(1280, 1280),
             'user_id' => $user,
-            'category_id' => $category,
         ];
     }
 }

@@ -16,7 +16,7 @@
                     <img src="{{ Storage::url($image->url_md) }}" alt="" class="w-full h-auto">
                 </div>
                 @empty
-                    <p class="text-center">No images available.</p>
+                    <p class="text-center">No images to show.</p>
                 @endforelse
             </div>
         </div>
