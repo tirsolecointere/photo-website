@@ -8,7 +8,7 @@ use App\Models\Category;
 class HomeController extends Controller
 {
     public function index() {
-        $categoryFilter = '';
+        $categoryFilter = request('category');
 
         if (request('category')) {
             $images = File::whereHas('categories', function($query) {
