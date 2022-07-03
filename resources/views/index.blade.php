@@ -2,9 +2,11 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
             <nav class="flex justify-center items-center flex-wrap mb-8">
-                <a href="javascript:void(0)" class="block lowercase py-2 px-4 hover:underline font-semibold text-stone-900">All</a>
+                <a href="{{ route('home') }}" class="block lowercase py-2 px-4 hover:underline
+                    {{ !$categoryFilter ? 'font-semibold text-stone-900' : 'text-stone-500' }}">All</a>
                 @foreach ($categories as $category)
-                    <a href="javascript:void(0)" class="block lowercase py-2 px-4 hover:underline hover:text-stone-700 text-stone-500">{{ $category->name }}</a>
+                    <a href="{{ route('home') . '?category=' . strtolower($category->name) }}" class="block lowercase py-2 px-4 hover:underline hover:text-stone-700
+                        {{ $categoryFilter == strtolower($category->name) ? 'font-semibold text-stone-900' : 'text-stone-500' }}">{{ $category->name }}</a>
                 @endforeach
             </nav>
 
