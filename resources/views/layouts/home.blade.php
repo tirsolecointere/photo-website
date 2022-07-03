@@ -40,7 +40,7 @@
         </nav>
 
         <!-- Offcanvas Menu -->
-        <div id="offcanvas-menu" class="fixed inset-0 flex items-center justify-center bg-stone-100 p-8 z-40 opacity-0 invisible transition-all duration-[750ms]">
+        <div id="offcanvas-menu" class="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-stone-100 p-8 z-40 opacity-0 invisible transition-all duration-[750ms]">
 
             <div class="absolute inset-x-0 bottom-0 w-full h-[65vh] lg:h-[85vh] overflow-hidden select-none pointer-events-none">
                 <img src="{{ asset('assets/images/menu_bg.jpg') }}" class="offcanvas-menu__bg w-full h-full object-cover object-bottom transition-transform ease-out scale-110 duration-[3s]" alt="menu background photo">

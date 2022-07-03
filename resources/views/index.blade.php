@@ -1,6 +1,6 @@
 <x-home-layout>
     <div class="py-12">
-        <div class="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
+        <div class="max-w-5xl xl:max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
             <nav class="flex justify-center items-center flex-wrap mb-8">
                 <a href="{{ route('home') }}" class="block lowercase py-2 px-4 hover:underline
                     {{ !$categoryFilter ? 'font-semibold text-stone-900' : 'text-stone-500' }}">All</a>
@@ -12,7 +12,7 @@
 
             <div class="masonry-grid">
                 @forelse ($images as $image)
-                <div class="masonry-grid__item float-left p-1 md:p-3 w-1/2 md:w-1/3 lg:w-1/4">
+                <div class="masonry-grid__item p-1 md:p-1 lg:p-2 xl:p-3 w-1/2 md:w-1/3 lg:w-1/4">
                     <img src="{{ Storage::url($image->url_md) }}" alt="" class="w-full h-auto">
                 </div>
                 @empty

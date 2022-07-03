@@ -1,4 +1,4 @@
-<div class="divide-y divide-slate-400/20">
+<div class="divide-y divide-stone-400/20">
     <div class="p-6">
         <form wire:submit.prevent="store" autocomplete="off" spellcheck="false">
             <x-label for="name" class="mb-2" :value="__('New category:')" />
@@ -46,7 +46,7 @@
                         </svg>
                     </button>
                     <div>
-                        <input type="text" wire:model.defer="category.name" class="rounded-md shadow-sm border border-gray-200 focus:border-indigo-400 focus:outline-none focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-1">
+                        <input type="text" wire:model.defer="category.name" class="rounded-md shadow-sm border border-stone-200 focus:border-indigo-400 focus:outline-none focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-1">
                         @error('category.name')
                             <div>
                                 <small class="font-medium text-red-600">{{ $message }}</small>

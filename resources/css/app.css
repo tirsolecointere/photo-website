@@ -21,7 +21,7 @@
 }
 
 body.offcanvas-open {
-    @apply overflow-y-hidden pr-2;
+    @apply overflow-hidden pr-2;
 }
 
 .masonry-grid__item:nth-child(2) {

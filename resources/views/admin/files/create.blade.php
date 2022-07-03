@@ -8,7 +8,7 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
+                <div class="p-6 bg-white border-b border-stone-200">
                     <h1 class="text-xl font-bold mb-5">Upload new file</h1>
 
                     {!! Form::open(['route' => 'admin.files.store', 'method' => 'POST', 'files' => true]) !!}
@@ -28,7 +28,7 @@
                             <div class="space-y-2">
                                 @foreach ($categories as $category)
                                     <div>
-                                        {!! Form::checkbox('categories[]', $category->id, null, ['id' => 'cat-label-' . $category->id, 'class' => 'form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer']) !!}
+                                        {!! Form::checkbox('categories[]', $category->id, null, ['id' => 'cat-label-' . $category->id, 'class' => 'form-check-input appearance-none h-4 w-4 border border-stone-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer']) !!}
                                         {!! Form::label('cat-label-' . $category->id, $category->name, ['class'=> 'form-check-label inline-block']) !!}
                                     </div>
                                 @endforeach
