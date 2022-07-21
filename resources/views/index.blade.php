@@ -23,13 +23,16 @@
     </div>
 
     <x-slot name='custom_js'>
-        <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
         <script>
             var elem = document.querySelector('.masonry-grid');
             var msnry = new Masonry(elem, {
                 itemSelector: '.masonry-grid__item',
                 columnWidth: 0
             });
+
+            imagesLoaded(elem, function() {
+                msnry.layout()
+            })
         </script>
     </x-slot>
 </x-home-layout>
