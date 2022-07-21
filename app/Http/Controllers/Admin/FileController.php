@@ -90,14 +90,14 @@ class FileController extends Controller
                         $constraint->aspectRatio();
                         $constraint->upsize();
                     })->save(
-                        storage_path().'\app\public\photos/'.$size.'/'.$image_name
+                        storage_path().'/app/public/photos/'.$size.'/'.$image_name
                     );
             } else {
                 $image->resize($value['width'], $value['height'], function($constraint) {
                     $constraint->aspectRatio();
                     $constraint->upsize();
                 })->save(
-                    storage_path().'\app\public\photos/'.$size.'/'.$image_name
+                    storage_path().'/app/public/photos/'.$size.'/'.$image_name
                 );
             }
         }
@@ -193,14 +193,14 @@ class FileController extends Controller
                             $constraint->aspectRatio();
                             $constraint->upsize();
                         })->save(
-                            storage_path().'\app\public\photos/'.$size.'/'.$image_name
+                            storage_path().'/app/public/photos/'.$size.'/'.$image_name
                         );
                 } else {
                     $image->resize($value['width'], $value['height'], function($constraint) {
                         $constraint->aspectRatio();
                         $constraint->upsize();
                     })->save(
-                        storage_path().'\app\public\photos/'.$size.'/'.$image_name
+                        storage_path().'/app/public/photos/'.$size.'/'.$image_name
                     );
                 }
             }
