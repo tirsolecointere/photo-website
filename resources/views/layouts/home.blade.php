@@ -5,6 +5,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
+        <meta name="description" content="I'm a landscape photographer based in Valencia, Venezuela.">
+        <meta name="robots" content="index, follow">
+
+        <meta property="og:url" content="https://tirsophotos.com">
+        <meta property="og:title" content="Tirso Lecointere - Landscape Photography">
+        <meta property="og:discription" content="I'm a landscape photographer based in Valencia, Venezuela. These shots represent a fraction of stunning places I have visited.">
+        <meta property="og:site_name" content="Tirso Lecointere" />
+        <meta property="og:type" content="website" />
+        {{-- <meta property="og:image" content="https://andyhardy.co/media/site/fd92a6660a-1631837366/andy-meta-image-860x540-q72.jpg"> --}}
+
         <title>{{ config('app.name', 'Tirso Lecointere | Landscape Photography') }}</title>
 
         <!-- Fonts -->
@@ -34,7 +44,7 @@
                 </h1>
                 <div>
                     <a href="mailto:hello@tirsophotos.com" class="hidden md:block bg-stone-900 hover:bg-stone-700 text-white text-sm py-3 px-4 md:px-6 rounded-full outline-none focus:ring-1 ring-offset-2 ring-stone-400" title="Send email">get in touch</a>
-                    <a href="javascript:void(0)" class="flex md:hidden w-10 h-10 justify-center items-center bg-stone-900 hover:bg-stone-700 rounded-full text-white outline-none focus:ring-1 ring-offset-2 ring-stone-400" title="Send email">
+                    <a href="mailto:hello@tirsophotos.com" class="flex md:hidden w-10 h-10 justify-center items-center bg-stone-900 hover:bg-stone-700 rounded-full text-white outline-none focus:ring-1 ring-offset-2 ring-stone-400" title="Send email">
                         <svg xmlns="http://www.w3.org/2000/svg" class="inline md:hidden h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                             <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                             <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
@@ -55,16 +65,22 @@
 
             <div class="offcanvas-menu__content text-center transition-all duration-[1s]">
                 <p class="block text-lg md:text-2xl">I’m a <b>landscape photographer</b> based in <b>valencia, venezuela</b>.</p>
-                <ul class="inline-flex flex-wrap gap-6 mt-8">
+                <ul class="inline-flex justify-center flex-wrap gap-6 mt-8">
                     <li class="block">
-                        <a href="" class="block text-xl text-stone-900 hover:text-stone-500 lowercase whitespace-nowrap hover:underline">
+                        <a href="https://www.instagram.com/tirsolecointere/" target="_blank" class="block md:text-xl text-stone-900 hover:text-stone-500 lowercase whitespace-nowrap hover:underline" title="Go to Instagram">
                             Instagram
                             <svg xmlns="http://www.w3.org/2000/svg" class="inline h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" /><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" /></svg>
                         </a>
                     </li>
                     <li class="block">
-                        <a href="" class="block text-xl text-stone-900 hover:text-stone-500 lowercase whitespace-nowrap hover:underline">
+                        <a href="https://www.twitter.com/tirsolecointere/" target="_blank" class="block md:text-xl text-stone-900 hover:text-stone-500 lowercase whitespace-nowrap hover:underline" title="Go to Twitter">
                             Twitter
+                            <svg xmlns="http://www.w3.org/2000/svg" class="inline h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" /><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" /></svg>
+                        </a>
+                    </li>
+                    <li class="block">
+                        <a href="mailto:hello@tirsophotos.com" class="block md:text-xl text-stone-900 hover:text-stone-500 lowercase whitespace-nowrap hover:underline" title="Send email">
+                            Email
                             <svg xmlns="http://www.w3.org/2000/svg" class="inline h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" /><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" /></svg>
                         </a>
                     </li>
