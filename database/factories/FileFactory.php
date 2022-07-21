@@ -40,9 +40,9 @@ class FileFactory extends Factory
         }
 
         return [
-            'url_th' => $this->faker->imageUrl(165, 165),
-            'url_md' => $this->faker->imageUrl(820, 820),
-            'url_lg' => $this->faker->imageUrl(1280, 1280),
+            'url_th' => 'photos/th/' . $this->faker->image('public/storage/photos/th', 165, 165, null, false),
+            'url_md' => 'photos/md/' . $this->faker->image('public/storage/photos/md', 820, 820, null, false),
+            'url_lg' => 'photos/lg/' . $this->faker->image('public/storage/photos/lg', 1200, 1200, null, false),
             'user_id' => $user,
         ];
     }
