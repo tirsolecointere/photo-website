@@ -3,7 +3,6 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <meta name="description" content="I'm a landscape photographer based in Valencia, Venezuela. These shots represent a fraction of stunning places I have visited.">
         <meta name="robots" content="index, follow">
@@ -13,13 +12,13 @@
         <meta property="og:discription" content="I'm a landscape photographer based in Valencia, Venezuela. These shots represent a fraction of stunning places I have visited.">
         <meta property="og:site_name" content="Tirso Lecointere" />
         <meta property="og:type" content="website" />
-        {{-- <meta property="og:image" content="https://andyhardy.co/media/site/fd92a6660a-1631837366/andy-meta-image-860x540-q72.jpg"> --}}
+        <meta property="og:image" content="{{ asset('assets/images/meta_image.jpg') }}">
 
         <title>{{ config('app.name', 'Tirso Lecointere | Landscape Photography') }}</title>
 
-        <link rel="shortcut icon" href="{{ asset('../favicon.ico') }}" type="image/x-icon">
-        <link rel="icon" href="{{ asset('../favicon-32x32.png') }}" type="image/png" sizes="32x32">
-        <link rel="icon" href="{{ asset('../favicon-16x16.png') }}" type="image/png" sizes="16x16">
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+        <link rel="icon" href="{{ asset('favicon-32x32.png') }}" type="image/png" sizes="32x32">
+        <link rel="icon" href="{{ asset('favicon-16x16.png') }}" type="image/png" sizes="16x16">
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
