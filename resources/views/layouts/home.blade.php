@@ -68,7 +68,7 @@
 
             <div class="offcanvas-menu__content text-center transition-all duration-[1s]">
                 <p class="block text-lg md:text-2xl">I’m a <b>landscape photographer</b> based in <b>valencia, venezuela</b>.</p>
-                <ul class="inline-flex justify-center flex-wrap gap-6 mt-8">
+                <ul class="flex flex-col md:flex-row justify-center flex-wrap gap-4 md:gap-6 mt-8">
                     <li class="block">
                         <a href="https://www.instagram.com/tirsolecointere/" target="_blank" class="block md:text-xl text-stone-900 hover:text-stone-500 lowercase whitespace-nowrap hover:underline" title="Go to Instagram">
                             Instagram
