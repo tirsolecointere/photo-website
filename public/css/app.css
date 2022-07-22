@@ -1019,9 +1019,6 @@ select {
 .gap-4 {
   gap: 1rem;
 }
-.gap-6 {
-  gap: 1.5rem;
-}
 .gap-2 {
   gap: 0.5rem;
 }
@@ -1607,6 +1604,10 @@ body.offcanvas-open {
 /* .masonry-grid__item:nth-child(2) {
     margin-top: 3rem;
 } */
+.masonry-grid__item {
+    display: block;
+}
+
 @media (min-width: 1024px) {
     .masonry-grid__item:nth-child(2), .masonry-grid__item:nth-child(4) {
         margin-top: 3rem;

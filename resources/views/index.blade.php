@@ -6,14 +6,21 @@
                     {{ !$categoryFilter ? 'font-semibold text-stone-900' : 'text-stone-500' }}">All</a>
                 @foreach ($categories as $category)
                     <a href="{{ route('home') . '?category=' . strtolower($category->name) }}" class="block lowercase py-2 px-4 hover:underline hover:text-stone-700
-                        {{ $categoryFilter == strtolower($category->name) ? 'font-semibold text-stone-900' : 'text-stone-500' }}">{{ $category->name }}</a>
+                        {{ $categoryFilter == strtolower($category->name) ? 'font-semibold text-stone-900' : 'text-stone-500' }}">
+                        {{ $category->name }}
+                    </a>
                 @endforeach
             </nav>
 
-            <div class="masonry-grid">
+            <div class="masonry-grid pswp-gallery" id="my-gallery">
                 @forelse ($images as $image)
                 <div class="masonry-grid__item p-1 md:p-1 lg:p-2 xl:p-3 w-1/2 md:w-1/3 lg:w-1/4">
-                    <img src="{{ Storage::url($image->url_md) }}" alt="" class="w-full h-auto">
+                    <a href="{{ Storage::url($image->url_lg) }}" target="_blank" class="block"
+                            data-pswp-width="{{ getImageSize(Storage::url($image->url_lg))[0] }}"
+                            data-pswp-height="{{ getImageSize(Storage::url($image->url_lg))[1] }}">
+
+                        <img src="{{ Storage::url($image->url_md) }}" alt="" class="w-full h-auto">
+                    </a>
                 </div>
                 @empty
                     <p class="text-center">No images to show.</p>
@@ -33,6 +40,18 @@
             imagesLoaded(elem, function() {
                 msnry.layout()
             })
+        </script>
+
+        <script type="module">
+            import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe/dist/photoswipe-lightbox.esm.js';
+
+            const lightbox = new PhotoSwipeLightbox({
+            gallery: '#my-gallery',
+            children: 'a',
+            pswpModule: () => import('https://unpkg.com/photoswipe'),
+            });
+
+            lightbox.init();
         </script>
     </x-slot>
 </x-home-layout>
