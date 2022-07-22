@@ -14,9 +14,9 @@ class HomeController extends Controller
             $images = File::whereHas('categories', function($query) {
                 $categoryFilter = request('category');
                 $query->where('name', $categoryFilter);
-            })->get();
+            })->get()->sortDesc();
         } else {
-            $images = File::all();
+            $images = File::all()->sortDesc();
         }
 
         $categories = Category::all();
