@@ -24,8 +24,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
         <!-- Styles -->
-        <link rel="stylesheet" href="https://unpkg.com/photoswipe@5.2.2/dist/photoswipe.css" />
-        <link rel="stylesheet" href="{{ asset('css/app.css') . '?v=0.0.1' }}">
+        <link rel="stylesheet" href="{{ asset('css/app.css') . '?v=0.0.2' }}">
     </head>
     <body class="h-full bg-stone-100 text-stone-900 font-mono antialiased pb-8">
         {{-- edges --}}

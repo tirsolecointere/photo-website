@@ -43,12 +43,13 @@
         </script>
 
         <script type="module">
-            import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe/dist/photoswipe-lightbox.esm.js';
+            import PhotoSwipeLightbox from '/js/photoswipe-lightbox.esm.min.js';
 
             const lightbox = new PhotoSwipeLightbox({
-            gallery: '#my-gallery',
-            children: 'a',
-            pswpModule: () => import('https://unpkg.com/photoswipe'),
+                gallery: '#my-gallery',
+                children: 'a',
+                pswpModule: () => import('/js/photoswipe.esm.min.js'),
+                padding: { top: 20, bottom: 20, left: 0, right: 0 }
             });
 
             lightbox.init();
