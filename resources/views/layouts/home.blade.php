@@ -20,9 +20,6 @@
         <link rel="icon" href="{{ asset('favicon-32x32.png') }}" type="image/png" sizes="32x32">
         <link rel="icon" href="{{ asset('favicon-16x16.png') }}" type="image/png" sizes="16x16">
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
-
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') . '?v=0.0.2' }}">
     </head>
