@@ -8,6 +8,6 @@
 
 $targetFolder = $_SERVER['DOCUMENT_ROOT'] . '/../core/storage/app/public';
 $linkFolder = $_SERVER['DOCUMENT_ROOT'] . '/storage';
-// echo "CREATING SYMLINK FROM: " . $targetFolder . ' TO: '. $linkFolder;
-symlink($targetFolder, $linkFolder) or die("ERROR CREATING SYMLINK FROM: " . $targetFolder . ' TO: '. $linkFolder);
-echo 'Symlink process successfully completed';
+echo "CREATING SYMLINK FROM: " . $targetFolder . ' TO: '. $linkFolder;
+// symlink($targetFolder, $linkFolder) or die("ERROR CREATING SYMLINK FROM: " . $targetFolder . ' TO: '. $linkFolder);
+// echo 'Symlink process successfully completed';
