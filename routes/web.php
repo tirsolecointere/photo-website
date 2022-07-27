@@ -32,4 +32,18 @@ Route::prefix('admin')->group(function() {
     });
 });
 
+
+/*
+|--------------------------------------------------------------------------
+| Hosting utilities
+|--------------------------------------------------------------------------
+|
+*/
+
+// Route::get('/clear-cache', function() {
+//     $exitCode = Artisan::call('cache:clear');
+//     $exitCode = Artisan::call('config:cache');
+//     return 'DONE'; //Return anything
+// });
+
 require __DIR__.'/auth.php';
