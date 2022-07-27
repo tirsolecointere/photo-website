@@ -43,6 +43,8 @@ class FileFactory extends Factory
             'url_th' => 'photos/th/' . $this->faker->image('public/storage/photos/th', 165, 165, null, false),
             'url_md' => 'photos/md/' . $this->faker->image('public/storage/photos/md', 820, 820, null, false),
             'url_lg' => 'photos/lg/' . $this->faker->image('public/storage/photos/lg', 1200, 1200, null, false),
+            'img_lg_width' => 1200,
+            'img_lg_height' => 1200,
             'user_id' => $user,
         ];
     }

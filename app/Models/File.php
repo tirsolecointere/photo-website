@@ -9,7 +9,7 @@ class File extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['url_lg', 'url_md', 'url_th', 'user_id', 'category_id'];
+    protected $fillable = ['url_lg', 'url_md', 'url_th', 'img_lg_width', 'img_lg_height', 'user_id', 'category_id'];
 
     public function user() {
         return $this->belongsTo(User::class);

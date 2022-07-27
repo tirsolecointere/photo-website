@@ -19,6 +19,9 @@ class CreateFilesTable extends Migration
             $table->string('url_md'); // medium
             $table->string('url_lg'); // large
 
+            $table->string('img_lg_width')->nullable();
+            $table->string('img_lg_height')->nullable();
+
             $table->foreignId('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 

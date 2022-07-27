@@ -16,8 +16,8 @@
                 @forelse ($images as $image)
                 <div class="masonry-grid__item p-1 md:p-1 lg:p-2 xl:p-3 w-1/2 md:w-1/3 lg:w-1/4">
                     <a href="{{ Storage::url($image->url_lg) }}" target="_blank" class="block"
-                            data-pswp-width="{{ getImageSize(Storage::url($image->url_lg))[0] }}"
-                            data-pswp-height="{{ getImageSize(Storage::url($image->url_lg))[1] }}">
+                            data-pswp-width="{{ $image->img_lg_width }}"
+                            data-pswp-height="{{ $image->img_lg_height }}">
 
                         <img src="{{ Storage::url($image->url_md) }}" alt="" class="w-full h-auto">
                     </a>

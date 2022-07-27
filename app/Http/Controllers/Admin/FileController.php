@@ -85,6 +85,8 @@ class FileController extends Controller
 
             $image = Image::make($request->file('file'));
 
+
+
             if ($size == 'th') {
                 $image->fit($value['width'], $value['height'], function($constraint) {
                         $constraint->aspectRatio();
@@ -107,6 +109,8 @@ class FileController extends Controller
             'url_th' => '/photos/th/'.$image_name,
             'url_md' => '/photos/md/'.$image_name,
             'url_lg' => '/photos/lg/'.$image_name,
+            'img_lg_width' => $image->width(),
+            'img_lg_height' => $image->height(),
         ]);
 
         $file->categories()->sync($request->categories);
@@ -209,6 +213,8 @@ class FileController extends Controller
                 'url_th' => '/photos/th/'.$image_name,
                 'url_md' => '/photos/md/'.$image_name,
                 'url_lg' => '/photos/lg/'.$image_name,
+                'img_lg_width' => $image->width(),
+                'img_lg_height' => $image->height(),
             ]);
 
             $file->categories()->sync($request->categories);
