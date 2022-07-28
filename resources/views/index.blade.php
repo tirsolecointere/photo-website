@@ -49,7 +49,9 @@
                 gallery: '#my-gallery',
                 children: 'a',
                 pswpModule: () => import('/js/photoswipe.esm.min.js'),
-                padding: { top: 20, bottom: 20, left: 0, right: 0 }
+                padding: { top: 20, bottom: 20, left: 0, right: 0 },
+                loop: false,
+                bgOpacity: .9,
             });
 
             lightbox.init();

@@ -1126,6 +1126,10 @@ select {
   left: 0px;
   right: 0px;
 }
+.inset-y-0 {
+  top: 0px;
+  bottom: 0px;
+}
 .top-0 {
   top: 0px;
 }
@@ -1147,6 +1151,27 @@ select {
 .top-\[35vh\] {
   top: 35vh;
 }
+.bottom-\[25\%\] {
+  bottom: 25%;
+}
+.bottom-\[50\%\] {
+  bottom: 50%;
+}
+.bottom-\[35\%\] {
+  bottom: 35%;
+}
+.bottom-\[20\%\] {
+  bottom: 20%;
+}
+.right-\[25\%\] {
+  right: 25%;
+}
+.left-\[25\%\] {
+  left: 25%;
+}
+.left-\[15\%\] {
+  left: 15%;
+}
 .z-0 {
   z-index: 0;
 }
@@ -1158,6 +1183,9 @@ select {
 }
 .z-40 {
   z-index: 40;
+}
+.z-10 {
+  z-index: 10;
 }
 .float-left {
   float: left;
@@ -1239,6 +1267,18 @@ select {
 }
 .mb-2 {
   margin-bottom: 0.5rem;
+}
+.mb-28 {
+  margin-bottom: 7rem;
+}
+.mt-28 {
+  margin-top: 7rem;
+}
+.mb-16 {
+  margin-bottom: 4rem;
+}
+.mb-14 {
+  margin-bottom: 3.5rem;
 }
 .block {
   display: block;
@@ -1582,11 +1622,22 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(134 239 172 / var(--tw-bg-opacity));
 }
+.bg-red-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 242 242 / var(--tw-bg-opacity));
+}
+.bg-red-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 226 226 / var(--tw-bg-opacity));
+}
 .bg-gradient-to-b {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
 .bg-gradient-to-r {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+.bg-gradient-to-l {
+  background-image: linear-gradient(to left, var(--tw-gradient-stops));
 }
 .from-stone-100 {
   --tw-gradient-from: #f5f5f4;
@@ -1598,17 +1649,37 @@ select {
   --tw-gradient-to: rgb(0 0 0 / 0);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
+.from-stone-100\/50 {
+  --tw-gradient-from: rgb(245 245 244 / 0.5);
+  --tw-gradient-to: rgb(245 245 244 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
 .to-transparent {
   --tw-gradient-to: transparent;
 }
 .to-stone-100 {
   --tw-gradient-to: #f5f5f4;
 }
+.to-stone-100\/75 {
+  --tw-gradient-to: rgb(245 245 244 / 0.75);
+}
+.to-stone-100\/50 {
+  --tw-gradient-to: rgb(245 245 244 / 0.5);
+}
+.to-stone-100\/80 {
+  --tw-gradient-to: rgb(245 245 244 / 0.8);
+}
 .bg-contain {
   background-size: contain;
 }
+.bg-cover {
+  background-size: cover;
+}
 .bg-center {
   background-position: center;
+}
+.bg-left {
+  background-position: left;
 }
 .bg-no-repeat {
   background-repeat: no-repeat;
@@ -1683,6 +1754,14 @@ select {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
 }
+.py-24 {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+.py-28 {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
 .pt-8 {
   padding-top: 2rem;
 }
@@ -1716,6 +1795,33 @@ select {
 .pb-1 {
   padding-bottom: 0.25rem;
 }
+.pt-28 {
+  padding-top: 7rem;
+}
+.pb-16 {
+  padding-bottom: 4rem;
+}
+.pt-36 {
+  padding-top: 9rem;
+}
+.pb-28 {
+  padding-bottom: 7rem;
+}
+.pt-52 {
+  padding-top: 13rem;
+}
+.pb-20 {
+  padding-bottom: 5rem;
+}
+.pt-32 {
+  padding-top: 8rem;
+}
+.pt-24 {
+  padding-top: 6rem;
+}
+.pt-20 {
+  padding-top: 5rem;
+}
 .text-center {
   text-align: center;
 }
@@ -1747,6 +1853,22 @@ select {
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
+}
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 .font-medium {
   font-weight: 500;
@@ -2307,6 +2429,22 @@ body.offcanvas-open {
 
 @media (min-width: 768px) {
 
+  .md\:left-\[15\%\] {
+    left: 15%;
+  }
+
+  .md\:bottom-\[25\%\] {
+    bottom: 25%;
+  }
+
+  .md\:left-\[10\%\] {
+    left: 10%;
+  }
+
+  .md\:mb-28 {
+    margin-bottom: 7rem;
+  }
+
   .md\:block {
     display: block;
   }
@@ -2340,6 +2478,18 @@ body.offcanvas-open {
     padding-right: 1.5rem;
   }
 
+  .md\:pb-28 {
+    padding-bottom: 7rem;
+  }
+
+  .md\:pt-32 {
+    padding-top: 8rem;
+  }
+
+  .md\:pt-52 {
+    padding-top: 13rem;
+  }
+
   .md\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
@@ -2348,6 +2498,11 @@ body.offcanvas-open {
   .md\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .md\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
 }
 
@@ -2364,6 +2519,10 @@ body.offcanvas-open {
 
   .lg\:mt-8 {
     margin-top: 2rem;
+  }
+
+  .lg\:mt-28 {
+    margin-top: 7rem;
   }
 
   .lg\:h-8 {

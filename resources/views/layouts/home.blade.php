@@ -21,7 +21,7 @@
         <link rel="icon" href="{{ asset('favicon-16x16.png') }}" type="image/png" sizes="16x16">
 
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset('css/app.css') . '?v=0.0.2' }}">
+        <link rel="stylesheet" href="{{ asset('css/app.css') . '?v=0.0.5' }}">
     </head>
     <body class="h-full bg-stone-100 text-stone-900 font-mono antialiased pb-8">
         {{-- edges --}}
@@ -92,6 +92,45 @@
         <main class="pt-16 lg:pt-24">
             {{ $slot }}
         </main>
+
+        <footer class="relative pt-20 md:pt-52 pb-20 md:pb-28 bg-left bg-cover lg:mt-28" style="background-image: url('{{ asset('assets/images/footer_bg.jpg') }}')">
+            <div class="absolute inset-x-0 bottom-0 md:bottom-[25%] top-0 bg-gradient-to-b from-stone-100 to-transparent pointer-events-none"></div>
+            <div class="absolute inset-y-0 right-0 left-0 md:left-[10%] bg-gradient-to-r from-transparent to-stone-100 pointer-events-none"></div>
+
+            <div class="max-w-5xl xl:max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 relative z-10">
+
+                <!-- Email link -->
+                <div class="text-center mb-4">
+                    <a href="mailto:hello@tirsophotos.com" class="text-2xl md:text-4xl font-bold hover:underline">hello@tirsophotos.com</a>
+                </div>
+
+                <ul class="flex flex-col md:flex-row justify-center items-center flex-wrap gap-4 md:gap-6 mt-8 mb-28">
+                    <li class="block">
+                        <a href="https://www.instagram.com/tirsolecointere/" target="_blank" class="block md:text-xl text-stone-900 hover:text-stone-700 lowercase whitespace-nowrap hover:underline" title="Go to Instagram">
+                            Instagram
+                            <svg xmlns="http://www.w3.org/2000/svg" class="inline h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" /><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" /></svg>
+                        </a>
+                    </li>
+                    <li class="block">
+                        <a href="https://www.twitter.com/tirsolecointere/" target="_blank" class="block md:text-xl text-stone-900 hover:text-stone-700 lowercase whitespace-nowrap hover:underline" title="Go to Twitter">
+                            Twitter
+                            <svg xmlns="http://www.w3.org/2000/svg" class="inline h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" /><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" /></svg>
+                        </a>
+                    </li>
+                    <li class="block">
+                        <a href="mailto:hello@tirsophotos.com" class="block md:text-xl text-stone-900 hover:text-stone-700 lowercase whitespace-nowrap hover:underline" title="Send email">
+                            Email
+                            <svg xmlns="http://www.w3.org/2000/svg" class="inline h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" /><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" /></svg>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="text-center">
+                    <div class="font-bold">&copy; 2022 Tirso Lecointere</div>
+                    <div class="text-sm">Designed & Developed by Tirso Lecointere</div>
+                </div>
+            </div>
+        </footer>
 
         <!-- Scripts -->
         <!-- App -->
