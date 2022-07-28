@@ -7,8 +7,8 @@
         <meta name="description" content="I'm a landscape photographer based in Valencia, Venezuela. These shots represent a fraction of stunning places I have visited.">
         <meta name="robots" content="index, follow">
 
-        <meta property="og:url" content="https://tirsophotos.com">
-        <meta property="og:title" content="Tirso Lecointere - Landscape Photography">
+        <meta property="og:url" content="{{ config('app.url', 'https://tirsophotos.com/') }}">
+        <meta property="og:title" content="{{ config('app.name', 'Tirso Lecointere | Landscape Photography') }}">
         <meta property="og:discription" content="I'm a landscape photographer based in Valencia, Venezuela. These shots represent a fraction of stunning places I have visited.">
         <meta property="og:site_name" content="Tirso Lecointere" />
         <meta property="og:type" content="website" />
