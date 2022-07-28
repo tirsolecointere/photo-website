@@ -26,11 +26,12 @@ body.offcanvas-open {
     @apply overflow-hidden pr-2;
 }
 
-/* .masonry-grid__item:nth-child(2) {
-    margin-top: 3rem;
-} */
 .masonry-grid__item {
     display: block;
+}
+
+.masonry-grid__item:nth-child(2) {
+    margin-top: 1.5rem;
 }
 
 @media (min-width: 1024px) {

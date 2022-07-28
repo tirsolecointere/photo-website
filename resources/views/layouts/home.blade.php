@@ -21,7 +21,7 @@
         <link rel="icon" href="{{ asset('favicon-16x16.png') }}" type="image/png" sizes="16x16">
 
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset('css/app.css') . '?v=0.0.5' }}">
+        <link rel="stylesheet" href="{{ asset('css/app.css') . '?v=0.0.6' }}">
     </head>
     <body class="h-full bg-stone-100 text-stone-900 font-mono antialiased pb-8">
         {{-- edges --}}
