@@ -31,7 +31,7 @@
     <link rel="icon" href="{{ asset('favicon-16x16.png') }}" type="image/png" sizes="16x16">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('css/app.css') . '?v=0.0.6' }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') . '?v=0.0.7' }}">
 </head>
 <body class="h-full bg-stone-100 text-stone-900 font-mono antialiased pb-8">
     {{-- edges --}}
@@ -68,13 +68,17 @@
     <div id="offcanvas-menu" class="fixed top-0 left-0 w-full h-screen flex items-center justify-center bg-stone-100 p-8 z-40 opacity-0 invisible transition-all duration-[750ms]">
 
         <div class="absolute inset-x-0 bottom-0 w-full h-[65vh] lg:h-[85vh] overflow-hidden select-none pointer-events-none">
-            <img src="{{ asset('assets/images/menu_bg.jpg') }}" class="offcanvas-menu__bg w-full h-full object-cover object-[25%_bottom] transition-transform ease-out scale-110 duration-[3s]" alt="menu background photo">
+            <img src="{{ asset('assets/images/menu_bg-v280423.jpg') }}" class="offcanvas-menu__bg w-full h-full object-cover object-left-bottom transition-transform ease-out scale-110 duration-[3s]" alt="menu background photo">
         </div>
+
         <div class="absolute inset-x-0 bottom-[18%] top-[35vh] lg:top-[15vh] bg-gradient-to-b from-stone-100 to-transparent pointer-events-none"></div>
         <div class="absolute inset-0 bg-gradient-to-r from-transparent to-stone-100 pointer-events-none"></div>
 
         <div class="offcanvas-menu__content text-center transition-all duration-[1s]">
-            <p class="block text-lg md:text-2xl">I’m a <b>landscape photographer</b> based in <b>valencia, venezuela</b>.</p>
+            <div class="mb-4">
+                <img src="{{ asset('assets/images/avatar.jpg') }}" class="inline-block w-32 h-32 lg:w-40 lg:h-40 rounded-full border-4 border-stone-100 object-cover" alt="">
+            </div>
+            <p class="block text-lg md:text-2xl">I’m a <b>landscape photographer</b> based in <b>Valencia, Venezuela</b>.</p>
             <ul class="flex flex-col md:flex-row justify-center flex-wrap gap-4 md:gap-6 mt-8">
                 <li class="block">
                     <a href="https://www.instagram.com/tirsolecointere/" target="_blank" class="block md:text-xl text-stone-900 hover:text-stone-500 lowercase whitespace-nowrap hover:underline" title="Go to Instagram">
@@ -103,7 +107,7 @@
         {{ $slot }}
     </main>
 
-    <footer class="relative pt-20 md:pt-52 pb-20 md:pb-28 bg-left bg-cover lg:mt-28" style="background-image: url('{{ asset('assets/images/footer_bg.jpg') }}')">
+    <footer class="relative pt-20 md:pt-52 pb-20 md:pb-28 bg-left bg-cover lg:mt-28" style="background-image: url('{{ asset('assets/images/footer_bg-v280423.jpg') }}')">
         <div class="absolute inset-x-0 bottom-0 md:bottom-[25%] top-0 bg-gradient-to-b from-stone-100 to-transparent pointer-events-none"></div>
         <div class="absolute inset-y-0 right-0 left-0 md:left-[10%] bg-gradient-to-r from-transparent to-stone-100 pointer-events-none"></div>
 
@@ -136,7 +140,7 @@
             </ul>
 
             <div class="text-center">
-                <div class="font-bold">&copy; 2022 Tirso Lecointere</div>
+                <div class="font-bold">&copy; {{ date("Y") }} Tirso Lecointere</div>
                 <div class="text-sm">Designed & Developed by Tirso Lecointere</div>
             </div>
         </div>
